@@ -64,6 +64,7 @@ document.addEventListener('keydown', e => {
     3- When Clicked on arrow or bullet change content of article
 */
 
+const pathRoot = document.body.getAttribute('data-root');
 const landingPage = document.querySelector('.landing');
 const landingHeading = document.querySelector('.landing .land-text h2');
 const landingParag = document.querySelector('.landing .land-text p');
@@ -97,14 +98,14 @@ function setImgBackground(arrname, arrowname) {
     let currentIndex = 0, imgname = window.getComputedStyle(landingPage).backgroundImage;
     for(let i = 0; i < arrname.length; i++){
         // console.log(imgname.substring(imgname.search('/IMG/')).replace('/IMG/', "").replace(/"\)/g,""));
-        if(arrname[i] === imgname.substring(imgname.search('/IMG/')).replace('/IMG/', "").replace(/"\)/g,"")) 
+        if(arrname[i] === imgname.substring(imgname.search(`${pathRoot}/IMG/`)).replace(`${pathRoot}/IMG/`, "").replace(/"\)/g,"")) 
             if(arrowname === 'left'){
                 if(currentIndex === -1) currentIndex = 0;
                 currentIndex = (currentIndex - 1 + arrname.length) % arrname.length;
-                return `url(/IMG/${arrname[currentIndex]})`;
+                return `url(${pathRoot}/IMG/${arrname[currentIndex]})`;
             } else if (arrowname === 'right'){
                 currentIndex = (currentIndex + 1) % arrname.length;
-                return  `url(/IMG/${arrname[currentIndex]})`;
+                return  `url(${pathRoot}/IMG/${arrname[currentIndex]})`;
             }
         currentIndex++;
     }
@@ -123,7 +124,7 @@ function updateSlider() {
     bulletsBtn[indexBullet = indexBullet === -1 ?  2 : indexBullet  % bulletsBtn.length].classList.add('active');
     // indexBullet++
     // bulletsBtn[currentSlider = currentSlider > 2 ? 0 : currentSlider < 0 ? 0 : currentSlider].classList.toggle('active');
-    return landingPage.style.backgroundImage = `url(/IMG/${Images[currentSlider]})`
+    return landingPage.style.backgroundImage = `url(${pathRoot}/IMG/${Images[currentSlider]})`
 }
 
 
@@ -283,7 +284,7 @@ function changeStateBtn(btnname) {
 function changeImage(){
     // change image
         skillImageBtns.forEach(img => {
-            img.setAttribute('src',`/IMG/${skillsImg[currentImage]}`);
+            img.setAttribute('src',`${pathRoot}/IMG/${skillsImg[currentImage]}`);
             // currentImage = currentImage === skillsImg.length - 1 ? 0  : currentImage + 1 % skillsImg.length;
             currentImage = currentImage === skillsImg.length - 1 ? 0  : currentImage + 1 % skillsImg.length;
             // currentImage = Math.floor(Math.random() * skillsImg.length);
