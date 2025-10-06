@@ -16,7 +16,7 @@ Interactive and Responsive Landing Page
 
 **1-Responsive Design:** Works seamlessly on desktops, tablets and smart phones.
 
-**2-Interactive UI:** Filter Images, Change Image Slider, Generate Random Text, Validating Form, Open Mail Application To Send Subscribe Email, Change Images and Text when Screen Tough for Smart Phones, Smoothly Scrolling and More Others.
+**2-Interactive UI:** Filter Images, Change Image Slider, Generate Random Text, Validating Form, Open Mail Application To Send Subscribe Email, Change Images and Text when Screen Touch for Smart Phones, Smoothly Scrolling and More Others.
 
 ---
 
@@ -57,3 +57,4 @@ git clone https://github.com/mohammed-soliman144/Kasper-Template-Two.git
 ## License:
 
 This Project is Licensed under the MIT License.
+
