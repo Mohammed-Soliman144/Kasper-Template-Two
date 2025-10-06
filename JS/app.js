@@ -101,10 +101,12 @@ function setImgBackground(arrname, arrowname) {
             if(arrowname === 'left'){
                 if(currentIndex === -1) currentIndex = 0;
                 currentIndex = (currentIndex - 1 + arrname.length) % arrname.length;
-                return `url(${window.location.origin}/IMG/${arrname[currentIndex]})`;
+                const url = new URL(`/IMG/${arrname[currentIndex]}`,window.location.href);
+                return `url(${url.href})`;
             } else if (arrowname === 'right'){
                 currentIndex = (currentIndex + 1) % arrname.length;
-                return  `url(${window.location.origin}/IMG/${arrname[currentIndex]})`;
+                const url = new URL(`/IMG/${arrname[currentIndex]}`,window.location.href);
+                return  `url(${url.href})`;
             }
         currentIndex++;
     }
@@ -123,7 +125,8 @@ function updateSlider() {
     bulletsBtn[indexBullet = indexBullet === -1 ?  2 : indexBullet  % bulletsBtn.length].classList.add('active');
     // indexBullet++
     // bulletsBtn[currentSlider = currentSlider > 2 ? 0 : currentSlider < 0 ? 0 : currentSlider].classList.toggle('active');
-    return landingPage.style.backgroundImage = `url(${window.location.origin}/IMG/${Images[currentSlider]})`
+    const url = new URL(`/IMG/${Images[currentSlider]}`,window.location.href);
+    return landingPage.style.backgroundImage = `url(${url.href})`
 }
 
 
@@ -283,7 +286,8 @@ function changeStateBtn(btnname) {
 function changeImage(){
     // change image
         skillImageBtns.forEach(img => {
-            img.setAttribute('src',`${window.location.origin}/IMG/${skillsImg[currentImage]}`);
+            const url = new URL(`/IMG/${skillsImg[currentImage]}`,window.location.href);
+            img.setAttribute('src',`${url.href}`);
             // currentImage = currentImage === skillsImg.length - 1 ? 0  : currentImage + 1 % skillsImg.length;
             currentImage = currentImage === skillsImg.length - 1 ? 0  : currentImage + 1 % skillsImg.length;
             // currentImage = Math.floor(Math.random() * skillsImg.length);
