@@ -1280,12 +1280,12 @@ main .pricing {
 
 .pricing .plans .plan::before {
     content: '';
-    width: 200%;
+    width: 150%;
     height: 1px;
     background-color: var(--primary-color);
     position: absolute;
     top: -25px;
-    left: -50%;
+    left: -25%;
 }
 
 .pricing .plans .plan h3 {
@@ -1329,12 +1329,12 @@ main .pricing {
 
 .pricing .plans .plan ul::before {
     content: '';
-    width: 200%;
+    width: 150%;
     height: 1px;
     background-color: var(--primary-color);
     position: absolute;
     top: 25px;
-    left: -50%;
+    left: -25%;
 }
 
 .pricing .plans .plan ul li:not(:nth-child(4)) {
@@ -1354,13 +1354,13 @@ main .pricing {
 
 .pricing .plans .plan ul li:nth-child(4)::before {
     content: '';
-    width: 200%;
+    width: 150%;
     height: 1px;
     background-color: var(--primary-color);
     position: absolute;
     margin-top: 15px;
     bottom: -5px;
-    left: -50%;
+    left: -25%;
 }
 
 .pricing .plans .plan a {
