@@ -101,6 +101,7 @@ function setImgBackground(arrname, arrowname) {
             if(arrowname === 'left'){
                 if(currentIndex === -1) currentIndex = 0;
                 currentIndex = (currentIndex - 1 + arrname.length) % arrname.length;
+                // Relative URL Path `IMG/${arrname[currentIndex]}`it done but Not absolutely path `/IMG/${arrname[currentIndex]}` start from domain name its failed
                 const url = new URL(`IMG/${arrname[currentIndex]}`,window.location.href);
                 return `url(${url.href})`;
             } else if (arrowname === 'right'){
@@ -299,6 +300,7 @@ function getRandomRange(min, max){
     return Math.floor(Math.random() * (max - min) + min);
 }
 
+let currentSkill = 0;
 function changeSpanContent(){
     const skills = ['HTML', 'CSS', 'JavaScript', 'C', 'C++', 'Java', 'C#', 'PHP'];
     allSkillSpans.forEach(span => {
@@ -306,7 +308,8 @@ function changeSpanContent(){
         // console.log(arr[i%arr.length]);
         span.setAttribute('prog-percent', getRandomRange(10,100).toString().concat('%'));
         console.log(span);
-        span.textContent = skills[Math.floor(Math.random() * skills.length)];
+        span.textContent = skills[(skills.length + currentSkill) % skills.length];
+        currentSkill++;
     })
 };
 
