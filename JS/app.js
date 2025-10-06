@@ -110,8 +110,6 @@ function setImgBackground(arrname, arrowname) {
     }
 };
 
-// 3 [1, 2, 3]
-1+1+3
 
 
 // 2- When clicked on bullets (ul) change class of it to active (li) should be change content and background image of landing page
