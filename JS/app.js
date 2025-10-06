@@ -300,16 +300,15 @@ function getRandomRange(min, max){
     return Math.floor(Math.random() * (max - min) + min);
 }
 
-let currentSkill = 0;
+
 function changeSpanContent(){
     const skills = ['HTML', 'CSS', 'JavaScript', 'C', 'C++', 'Java', 'C#', 'PHP'];
-    allSkillSpans.forEach(span => {
+    allSkillSpans.forEach(span, index => {
         // console.log(span.getAttribute('prog-percent'), span.textContent);
         // console.log(arr[i%arr.length]);
         span.setAttribute('prog-percent', getRandomRange(10,100).toString().concat('%'));
         console.log(span);
-        span.textContent = skills[(skills.length + currentSkill) % skills.length];
-        currentSkill++;
+        span.textContent = skills[index % skills.length];
     })
 };
 
